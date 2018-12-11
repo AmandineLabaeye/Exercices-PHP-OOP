@@ -1,17 +1,18 @@
 Consignes :
 
-- Lancer exercice.html dans le navigateur, ouvrir la console de debug, et cliquez sur l'onglet réseau
-- Cliquer sur le bouton présent sur la page pour executer votre premiere requete ajax
-- Votre requete ajax va être présente dans l'onglet réseau
+- Compléter le code de la classe personnage pour ajouter les méthodes suivantes :
 
-- Créer un script php qui echo le texte de votre choix, uploadez sur votre hebergement
-- Modifiez la fonction js lançant la requete ajax pour qu'elle effectue une requête vers ce script php au lieu du fichier
-data.txt
-- Testez => Ca ne fonctionne pas !
-- Pourquoi ? : Il n'est pas possible d'éxécuter une requête ajax vers un domaine différent du domaine où est éxécuté
-votre javascript pour des raisons de sécurité
+    walkLeft() ( déplace le personnage vers la gauche )
+    walkTop() ( déplace le personnage vers le haut )
+    walkBottom() ( déplace le personnage vers le bas )
 
-- Uploadez tout les fichiers du projet sur webhost puis testez en ligne => Ca marche !
+- Dans ma classe, la propriété nom est accessible directement , complétez le code de ma classe pour utiliser un getter/setter
+    afin de définir la propriété nom
+
+- Définir la propriété nom sur private, le code présent sur index.php doit produire une erreur
+
+- Modifier le code présent sur index.php qui modifie ou accéde à la propriété nom pour que celui ci utilise ma fonction
+setter ou getter.
 
 
 
@@ -50,5 +51,62 @@ La propriété est accessible seulement à l'intérieur de la classe mais les cl
 y acceder.
 
 
+Pour déclarer les méthodes, on utilisera les mêmes mots clefs, le comportant est similaire, une méthode private ne sera pas
+utilisable en dehors de la classe, une méthode publique le sera.
+
+
+- Créer une instance de classe :
+
+Pour créer une instance de classe, on utilise le mot clef new suivi du nom de la classe puis des ()
+
+new nom_de_la_classe();
+
+Une instance de classe est en réalité une copie unique de la classe intanciée, vous pouvez modifier directement les
+propriétés de l'instance sans modifier les propriétés de la classe principale.
+
+
+- Constructeur de classe :
+
+Dans la classe personnage.php, j'ai déclaré un constructeur de classe.
+
+On déclare un constructeur de classe en utilisant cette syntaxe :
+
+public function __construct()
+{
+
+}
+
+Le constructeur doit toujours être défini sur public, il doit toujours être accessible en dehors de la classe.
+
+ Lorsqu'un constructeur est déclaré, cela permet de définir des propriétés ayant des valeurs par défaut qui seront
+ transmis automatiquement aux instances de la classe.
+
+
+- Acceder aux propriétés et aux méthodes d'une instance de classe :
+
+Pour accéder aux propriétés et aux méthodes de l'instance, on utilisera la syntaxe suivante :
+
+$var->propriete
+
+La syntaxe à retenir ici est l'utilisation de "->", celle ci est obligatoire pour les instances
+
+
+- Mutator ou Setter :
+
+Une pratique courante en PHP est de définir une fonction mutator ( ausi appelé setter ) afin de pouvoir modifier une propriété déclarée
+avec protected ou private.
+
+Pour ce faire, il suffit de déclarer une fonction public puis définir la propriété à l'aide d'un parametre de fonction
+
+
+- Accessor ou Getter :
+
+De la même façon, pour lire un attribut privé ou protégé, il est courant de définir un getter qui va retourner la valeur
+
+
+L'interet principal des getter/setter réside dans le fait que vous définissez une méthode standardisée pour définir ou lire
+une propriété, si plus tard vous devez modifier la façon dont la propriété est lue ou la façon dont elle est définie,
+vous n'avez que deux fonctions à modifier quelque soit le nombre de fois où vous définissez ou accédez à cette propriété
+dans votre code.
 
 
