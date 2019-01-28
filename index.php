@@ -6,20 +6,27 @@
  * Time: 14:35
  */
 
-include"classes/personnage.php";
+include "classes/personnage.php";
 
 // Creation d'une instance de la classe personnage
 $perso = new personnage();
 
-echo $perso->nom;
+echo $perso->getNom();
 
-echo"<br><br>";
+echo "<br><br>";
 
+$perso->setId(3);
 
+Echo $perso->getId();
+
+echo "<br><br>";
 
 $perso2 = new personnage();
-$perso2->nom = "Robert";
-echo $perso2->nom;
+
+$perso2->setNom("Robert");
+
+echo $perso2->getNom();
+
 
 
 
